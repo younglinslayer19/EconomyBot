@@ -21,9 +21,6 @@ def check_user(user_id):
         cooldown.create_json(user_id, value={"daily": "0", "work": "0", "stream": "0"})
         return True
 
-@tasks.loop(seconds=1)
-async def scan():
-    print("test")
 
 async def exp(user_id):
     gg = int(economy.get_json(f"{user_id}.xp"))
